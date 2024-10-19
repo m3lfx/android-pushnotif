@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 //authController
+
+//const admin = require("firebase-admin"); install firebase-admin
 //var serviceAccount = require('../config/firebase.json'); //download service account
 //admin.initializeApp({
 //    credential: admin.credential.cert(serviceAccount),

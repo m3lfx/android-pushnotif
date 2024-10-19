@@ -18,7 +18,7 @@ import java.util.Objects;
 public class MyFirebaseService extends FirebaseMessagingService {
     private final static String CHANNEL_ID = "1";
     private final static String CHANNEL_NAME = "1";
-    private int counter = 0;
+
     NotificationCompat.Builder builder;
     NotificationManagerCompat compat;
     private final static int NOTIFICATION_ID = 1;
@@ -33,15 +33,15 @@ public class MyFirebaseService extends FirebaseMessagingService {
             }
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder ( this, CHANNEL_ID );
             notificationBuilder.setAutoCancel ( true )
-                    .setStyle ( new NotificationCompat.BigTextStyle ().bigText ( message.getNotification ().getBody () ) )
+                    .setStyle ( new NotificationCompat.BigTextStyle ().bigText ( message.getNotification().getBody() ) )
                     .setDefaults ( Notification.DEFAULT_ALL )
                     .setWhen ( System.currentTimeMillis () )
                     .setSmallIcon ( R.drawable.notification_icon )
-                    .setTicker( message.getNotification ().getTitle () )
+                    .setTicker( message.getNotification().getTitle() )
                     .setPriority( Notification.PRIORITY_MAX )
-                    .setContentTitle( message.getNotification ().getTitle() )
-                    .setContentText( message.getNotification ().getBody() );
-            notificationManager.notify ( 1, notificationBuilder.build () );
+                    .setContentTitle( message.getNotification().getTitle() )
+                    .setContentText( message.getNotification().getBody() );
+            notificationManager.notify ( 1, notificationBuilder.build() );
         }
 
     }
